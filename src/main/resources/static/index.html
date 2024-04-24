@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tickets</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"><meta name="description" content="">
+    <script src="function.js" type="application/javascript"></script>
+
+
+</head>
+<body>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <h1 class="mb-4">Cinema ticket's</h1>
+            <hr>
+            <form>
+                <div class="mb-3">
+                    <label for="movieSelector"  class="form-lable" id="movieSelector"> Select movie</label>
+                    <select class="form-select" id="movie">
+                        <option value="No movie selected">No movie selected</option>
+                        <option value="Mean Girls">Mean Girls</option>
+                        <option value="James Bond-Skyfall">James Bond-Skyfall</option>
+                        <option value="Harry Potter and the chamber of secrets">Harry Potter and the chamber of secrets</option>
+                        <option value="Tangled">Tangled</option>
+                        <option value="Gladiator">Gladiator</option>
+                        <option value="Spider-Man Homecoming">Spider-Man Homecoming</option>
+                    </select>
+                    <span id="errorMovie" style="color : red"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label for="numberTicket">Number of tickets:</label>
+                    <input type="number" class="form-control" id="numberTicket" min="0">
+                    <span id="errorNumber" style="color: red"></span>
+                </div>
+
+                <div class="row g-3">
+                    <div class="col">
+                        <label for="firstName" >First name:</label>
+                        <input type="text" class="form-control"id="firstName">
+                        <span id="errorFirstname" style="color: red"></span>
+                    </div>
+                    <div>
+                        <label for="lastName">Last name:</label>
+                        <input type="text" class="form-control" id="lastName">
+                        <span id="errorLastname" style="color: red"></span>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="phoneNumber" class="form-lable">Phonenumber:</label>
+                    <input type="number" class="form-control" id="phoneNumber" pattern="[0-9]{8}">
+                    <span id="errorPhonenumber" style="color: red"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label for="eMail" class="form-lable">E-Mail:</label>
+                    <input type="email" class="form-control" id="eMail">
+                    <span id="errorEmail" style="color: red"></span>
+                </div>
+
+                <button class="btn btn-primary" onclick="buyTicket()"> Buy tickets</button>
+
+                <h2 class="mt-4">Your ticket's</h2>
+                <div class="mb-3" id="output"></div>
+
+                <button class="btn btn-danger" onClick="deleteTicket()">Delete all tickets</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
