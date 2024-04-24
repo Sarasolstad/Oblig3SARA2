@@ -14,7 +14,7 @@ function validEmail(eMail){
     const regex= /^[a-åA-Å0-9._-]+@[a-åA-Å0-9.-]+\.[a-åA-Å]{2,4}$/;
     return regex.test(eMail);
 }
-console.log("test")
+
 function buyTicket() {
     const ticket = {
         movie : $("#movie").val(),
