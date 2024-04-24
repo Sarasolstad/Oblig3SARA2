@@ -2,12 +2,12 @@
 
 
 $(function (){
-    getAll()
+    getAll();
 });
 
 function validPhoneNumber(phoneNumber){
     const regex = /^[0-9]{8}$/;
-    return regex.test(phoneNumber)
+    return regex.test(phoneNumber);
 }
 
 function validEmail(eMail){
@@ -64,6 +64,7 @@ function buyTicket() {
     $.post("/save",ticket,function (){
         getAll();
     });
+
     $("#movie").val("");
     $("#numberTicket").val("");
     $("#firstName").val("");
@@ -99,7 +100,7 @@ function formImput(ticket){
             "<td>"+tic.phoneNumber+"</td>"+
             "<td>"+tic.eMail+"</td>"+
             "<td> <a class='btn btn-primary' href='changeTicket.html?id="+tic.id+"'>Change</a></td>"+
-        "<td> <button class='bnt btn-danger' onclick='deleteOne("+tic.id+")'>Delete</button></td>+"+"</tr>";
+        "<td> <button class='bnt btn-danger' onclick='deleteOne("+tic.id+")'>Delete</button></td>"+"</tr>";
     }
     out +=
         "</tbody>"+"</table>";

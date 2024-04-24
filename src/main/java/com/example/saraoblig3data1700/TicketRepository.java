@@ -14,8 +14,8 @@ public class TicketRepository {
 
 
             public void saveTicket(Ticket inTicket) {
-                String sql = "INSERT INTO Ticket (id, movie, numberTicket, firstName, lastName, phoneNumber, eMail) VALUES(?,?,?,?,?,?,?)";
-                db.update(sql,inTicket.getId(), inTicket.getMovie(), inTicket.getNumberTicket(), inTicket.getFirstName(), inTicket.getLastName(), inTicket.getPhoneNumber(), inTicket.geteMail());
+                String sql = "INSERT INTO Ticket (movie, numberTicket, firstName, lastName, phoneNumber, eMail) VALUES(?,?,?,?,?,?)";
+                db.update(sql, inTicket.getMovie(), inTicket.getNumberTicket(), inTicket.getFirstName(), inTicket.getLastName(), inTicket.getPhoneNumber(), inTicket.geteMail());
             }
 
             public List<Ticket> getAll() {
@@ -41,7 +41,7 @@ public class TicketRepository {
             }
 
             public void changeTicket(Ticket inTicket){
-                String sql = "UPDATE Ticket SET id=?, movie=?, NumberTicket=?, firstName=?, lastName=?, phoneNumber=?, eMail=? where id=?";
-                db.update(sql, inTicket.getId(), inTicket.getMovie(), inTicket.getNumberTicket(), inTicket.getFirstName(), inTicket.getLastName(), inTicket.getPhoneNumber(), inTicket.geteMail());
+                String sql = "UPDATE Ticket SET  movie=?, NumberTicket=?, firstName=?, lastName=?, phoneNumber=?, eMail=? WHERE id=?";
+                db.update(sql, inTicket.getMovie(), inTicket.getNumberTicket(), inTicket.getFirstName(), inTicket.getLastName(), inTicket.getPhoneNumber(), inTicket.geteMail(),inTicket.getId());
             }
 }
